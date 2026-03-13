@@ -2,7 +2,7 @@
     "mcpServers": {
         "railway": {
             "command": "npx",
-            "args": ["-y", "@railwayapp/mcp-server"],
+            "args": ["-y", "@railway/mcp-server"],
             "env": {
                 "RAILWAY_API_TOKEN": "690294c5-ddf4-4325-b550-6d121a6625ce"
             }
