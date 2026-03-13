@@ -2,19 +2,18 @@ FROM ghcr.io/sparfenyuk/mcp-proxy:latest
 
 USER root
 
-# Install Node.js (for official MCP servers) and uv (for Python-based MCP servers)
+# Install Node.js, npm, curl, and bash
 RUN python3 -m ensurepip && \
     pip install --no-cache-dir uv && \
-    apk add --no-cache nodejs npm
+    apk add --no-cache nodejs npm curl bash
 
-# Pre-install official MCP servers
-# fetch is Python-only; memory and sequential-thinking are on npm
-RUN uv tool install mcp-server-fetch && \
-    npm install -g \
-    @modelcontextprotocol/server-memory \
-    @modelcontextprotocol/server-sequential-thinking
+# Install Railway CLI
+RUN curl -fsSL https://railway.com/install.sh | bash
 
-# Create data directory for memory server persistence
+# Pre-install Railway MCP server
+RUN npm install -g @railwayapp/mcp-server
+
+# Create data directory for persistence
 RUN mkdir -p /data/memory && chmod 777 /data/memory
 
 COPY --chmod=755 entrypoint.sh /entrypoint.sh
