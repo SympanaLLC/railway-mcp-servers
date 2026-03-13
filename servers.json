@@ -1,0 +1,21 @@
+{
+  "mcpServers": {
+    "fetch": {
+      "command": "mcp-server-fetch",
+      "args": [],
+      "env": {}
+    },
+    "memory": {
+      "command": "mcp-server-memory",
+      "args": [],
+      "env": {
+        "MEMORY_FILE_PATH": "/data/memory/memory.json"
+      }
+    },
+    "sequential-thinking": {
+      "command": "mcp-server-sequential-thinking",
+      "args": [],
+      "env": {}
+    }
+  }
+}
