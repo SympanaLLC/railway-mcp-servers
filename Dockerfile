@@ -5,13 +5,10 @@ USER root
 # Install Node.js, npm, curl, and bash
 RUN python3 -m ensurepip && \
     pip install --no-cache-dir uv && \
-    apk add --no-cache nodejs npm curl bash
+    apk add --no-cache nodejs npm curl bash git
 
-# Install Railway CLI
-RUN curl -fsSL https://railway.com/install.sh | bash
-
-# Pre-install Railway MCP server
-RUN npm install -g @railwayapp/mcp-server
+# Install Railway CLI via npm and Railway MCP server
+RUN npm install -g @railway/cli @railwayapp/mcp-server
 
 # Create data directory for persistence
 RUN mkdir -p /data/memory && chmod 777 /data/memory
