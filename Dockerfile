@@ -8,7 +8,7 @@ RUN python3 -m ensurepip && \
     apk add --no-cache nodejs npm curl bash git
 
 # Install Railway CLI via npm and Railway MCP server
-RUN npm install -g @railway/cli @railwayapp/mcp-server
+RUN npm install -g @railway/cli @railway/mcp-server
 
 # Create data directory for persistence
 RUN mkdir -p /data/memory && chmod 777 /data/memory
