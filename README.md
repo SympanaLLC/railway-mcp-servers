@@ -125,3 +125,7 @@ The gateway uses [mcp-proxy](https://github.com/sparfenyuk/mcp-proxy) to bridge 
 - [Official MCP Servers](https://github.com/modelcontextprotocol/servers)
 - [mcp-proxy](https://github.com/sparfenyuk/mcp-proxy)
 - [supergateway](https://github.com/supercorp-ai/supergateway) (client-side bridge)
+
+## Documentation upkeep
+
+Agents must follow the [README maintenance requirements in AGENTS.md](AGENTS.md#readme-maintenance-required-for-agents). Review this README for every task and update affected documentation in the same change. Document verified setup, configuration, behavior, integrations, deployment, and limitations; keep secrets and private data out of Git.
